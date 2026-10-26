@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RichMan - Showroom Mobil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-car"></i> Rich<span>Man</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#katalog">Daftar Mobil</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="container hero-content">
+      <h1>Temukan Mobil Impian Anda</h1>
+      <p>Pilihan mobil terbaik dengan kualitas terjamin.</p>
+      <a href="#katalog" class="btn btn-primary">Lihat Daftar Mobil</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="katalog" class="section">
+      <div class="section-header">
+        <h2>Daftar Mobil Terbaru</h2>
+        <p>Data mobil diambil langsung secara otomatis melalui API</p>
+      </div>
+
+      <div class="filter-box">
+        <div class="search-group">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Cari merk mobil...">
+        </div>
+        <div class="select-group">
+          <select id="brandFilter">
+            <option value="ALL">Semua Merk</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="loading" class="loading-state">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <p>Memuat data mobil...</p>
+      </div>
+
+      <div id="carGrid" class="car-grid"></div>
+
+      <div id="noData" class="no-data hidden">
+        <i class="fa-solid fa-car-side"></i>
+        <p>Mobil yang Anda cari tidak ditemukan.</p>
+      </div>
+    </section>
+
+    <section id="tentang" class="section">
+      <div class="section-header">
+        <h2>Tentang RichMan</h2>
+        <p>Showroom Mobil Digital Masa Kini</p>
+      </div>
+      <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8;">
+        <p style="margin-bottom: 1rem;">
+          Selamat datang di Showroom<strong> RichMan</strong>! Kami adalah showroom mobil digital terpercaya yang menyajikan berbagai pilihan mobil berkualitas, mulai dari SUV, sedan, hingga mobil hemat energi & ramah lingkungan (Hybrid).
+        </p>
+        <p>
+          Platform ini dikembangkan untuk <strong>Tugas Akhir BTNG Frontend</strong>, yaitu mengintegrasikan data kendaraan secara <em>real-time</em> langsung dari API resmi panitia.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="carModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div id="modalBody">
+      </div>
+    </div>
+  </div>
+
+  <div id="buyModal" class="modal">
+    <div class="modal-content" style="text-align: center; max-width: 400px; padding: 2rem;">
+      <div style="font-size: 3rem; margin-bottom: 1rem; color: #10b981;">🎉</div>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Pesanan Berhasil!</h3>
+      <p id="buyModalText" style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;"></p>
+      <button id="closeBuyModal" class="btn btn-primary" style="width: 100%;">Tutup</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; Tugas Akhir BTNG 2026. RichMan Showroom.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
